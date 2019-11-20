@@ -7,7 +7,7 @@ from util import setup_session, BATCH_SIZE, generator_emails, REFERAL_CODE, BATC
 
 def main():
     while True:
-        get_new_identity()
+        # get_new_identity()
         with ThreadPool(processes=BATCHES) as p:
             p.map(send_batch, range(BATCHES))
 
