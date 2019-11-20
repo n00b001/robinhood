@@ -30,10 +30,16 @@ def generator_emails():
     joined = males + females
     random.shuffle(joined)
     random.shuffle(lasts)
+    domain = random.choice([
+        "gmail",
+        "hotmail",
+        "outlook",
+        "googlemail"
+    ])
     for fname in joined[:BATCH_SIZE]:
         for lname in lasts[:BATCH_SIZE]:
             chars = "".join([random.choice(string.ascii_letters) for _ in range(2)])
-            yield f"{fname}{chars}{lname}@gmail.com"
+            yield f"{fname}{chars}{lname}@{domain}.com"
 
     # for _ in range(BATCH_SIZE):
     #     yield "".join([random.choice(string.ascii_letters) for _ in range(32)]) + "@gmail.com"
