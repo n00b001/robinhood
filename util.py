@@ -27,23 +27,23 @@ with open("last.txt") as f:
 
 
 def generator_emails():
-    joined = males + females
-    random.shuffle(joined)
-    random.shuffle(lasts)
-    emails = [
-        "gmail",
-        "hotmail",
-        "outlook",
-        "googlemail"
-    ]
-    for fname in joined[:BATCH_SIZE]:
-        for lname in lasts[:BATCH_SIZE]:
-            domain = random.choice(emails)
-            chars = "".join([random.choice(string.ascii_letters) for _ in range(2)])
-            yield f"{fname}{chars}{lname}@{domain}.com"
+    # joined = males + females
+    # random.shuffle(joined)
+    # random.shuffle(lasts)
+    # emails = [
+    #     "gmail",
+    #     "hotmail",
+    #     "outlook",
+    #     "googlemail"
+    # ]
+    # for fname in joined[:BATCH_SIZE]:
+    #     for lname in lasts[:BATCH_SIZE]:
+    #         domain = random.choice(emails)
+    #         chars = "".join([random.choice(string.ascii_letters) for _ in range(2)])
+    #         yield f"{fname}{chars}{lname}@{domain}.com"
 
-    # for _ in range(BATCH_SIZE):
-    #     yield "".join([random.choice(string.ascii_letters) for _ in range(32)]) + "@gmail.com"
+    for _ in range(BATCH_SIZE):
+        yield "".join([random.choice(string.ascii_letters) for _ in range(32)]) + "@gmail.com"
 
     # word = "alexanderfanthome"
     # # word = string.ascii_lowercase
