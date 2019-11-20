@@ -41,6 +41,8 @@ def process_email(email):
                 break
             time.sleep(sleep_time)
             sleep_time *= 2.0
+            if sleep_time > 1:
+                return {email: "error"}
         if not resp.ok:
             return {email: "error"}
         # resp = s.get(f"https://api.robinhood.com/midlands/tailgate/devonshire/spot/{email}/")
